@@ -30,6 +30,7 @@ $(function() {
             explode: 6
         },
         mouse: {
+            relative : true,
             track: true
         },
         legend: {

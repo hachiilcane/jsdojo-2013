@@ -44,6 +44,10 @@
             <div id="editor-render-6" class="graph"></div>
         </div>
 
+        <div id="q8">
+            <h2>5段階評価</h2>
+            <div id="editor-render-7" class="graph"></div>
+        </div>
     </div>
 </div>
 
@@ -78,6 +82,18 @@
         d3: [[2,1.03]],
         d4: [[3,3.5]]
     };
+
+    q4 = [
+        [0, 1],
+        [1, 4],
+        [2, 3],
+        [3, 5]
+    ];
+
+    q8 = {
+        s1: { label : '全体の満足度', data : [[0, 3], [1, 8], [2, 5], [3, 5]] }
+    };
+
 //    $(question_list).each(function(index) {
 //        var html = '';
 //        $("#data").append(html);
@@ -90,5 +106,9 @@
 <script type="text/javascript" src="/js/result_q2.js"></script>
 <script type="text/javascript" src="/js/result_q3.js"></script>
 <script type="text/javascript" src="/js/result_q4.js"></script>
+<script type="text/javascript" src="/js/result_q5.js"></script>
+<script type="text/javascript" src="/js/result_q6.js"></script>
+<script type="text/javascript" src="/js/result_q7.js"></script>
+<script type="text/javascript" src="/js/result_q8.js"></script>
 </body>
 </html>
