@@ -8,10 +8,10 @@ $(function() {
 //    console.log(q2.d1);
 
     graph1 = Flotr.draw(container, [{
-        data: q2.d1,
+        data: [[0, result.want_next.yes]],
         label: 'Yes'
     }, {
-        data: q2.d2,
+        data: [[0, result.want_next.no]],
         label: 'No'
     }], {
         HtmlText: true,
