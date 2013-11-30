@@ -5,6 +5,7 @@ jQuery(function ($) {
     $.post("/send", $("#questionnaire").serialize())
       .done(function() {
         alert("ご協力ありがとうございました！");
+        location.assign("/result");
       })
       .fail(function() {
         alert("アンケート結果送信に失敗しました。");
