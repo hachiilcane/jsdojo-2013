@@ -9,6 +9,6 @@
   "dependencies": {
     "express": "~3.4.5",
     "sequelize": "~2.0.0-beta.1",
-    "hjs": "0.0.6"
+    "hogan-express": "~0.5.1"
   }
 }
