@@ -1,0 +1,14 @@
+{
+  "name": "jsdojo-2013",
+  "version": "0.0.0",
+  "description": "enquete app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~3.4.5",
+    "sequelize": "~2.0.0-beta.1",
+    "hjs": "0.0.6"
+  }
+}
