@@ -1,0 +1,11 @@
+input.slider_text {
+    border:0;
+    color:#f6931f;
+    font-weight:bold;
+    font-size: larger;
+}
+
+.slider {
+    width: 300px;
+}
+
