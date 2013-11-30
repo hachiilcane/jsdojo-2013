@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>アンケート結果</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #container {
+            width : 600px;
+            height: 384px;
+            margin: 8px auto;
+        }
+    </style>
+</head>
+
+<body>
+<h1>アンケート結果</h1>
+<div id="container"></div>
+<link href="/css/style.css" media="all" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/js/flotr2.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        var
+                container = document.getElementById('container'),
+                data = [],
+                graph, i;
+
+        // Sample the sine function
+        for (i = 0; i < 4 * Math.PI; i += 0.2) {
+            data.push([i, Math.sin(i)]);
+        }
+
+        // Draw Graph
+        graph = Flotr.draw(container, [ data ], {
+            yaxis : {
+                max : 2,
+                min : -2
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>
