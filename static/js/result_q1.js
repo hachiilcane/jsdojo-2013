@@ -8,10 +8,10 @@ $(function() {
 //    console.log(q1.d1);
 
     graph1 = Flotr.draw(container, [{
-        data: q1.d1,
+        data: [[0, result.times[1]]],
         label: '1回目'
     }, {
-        data: q1.d2,
+        data: [[1, result.times[2]]],
         label: '2回目'
     }], {
         HtmlText: true,
@@ -30,6 +30,7 @@ $(function() {
             explode: 6
         },
         mouse: {
+            relative : true,
             track: true
         },
         legend: {

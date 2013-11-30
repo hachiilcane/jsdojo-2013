@@ -7,43 +7,65 @@ $(function() {
 //    console.log(q3);
 //    console.log(q3.d1);
 
-    graph1 = Flotr.draw(container, [{
-        data: q3.d1,
-        label: 'Comedy'
-    }, {
-        data: q3.d2,
-        label: 'Action'
-    }, {
-        data: q3.d3,
-        label: 'Romance',
-        pie: {
-            explode: 50
+    var
+        xmark = new Image(),
+        checkmark = new Image(),
+        bars = {
+            data: [],
+            bars: {
+                show: true,
+                barWidth: 0.6,
+                lineWidth: 0,
+                fillOpacity: 0.8
+            }
+        }, markers = {
+            data: [],
+            markers: {
+                show: true,
+                position: 'ct',
+                labelFormatter: function (o) {
+                    return (o.y >= 5) ? checkmark : xmark;
+                }
+            }
+        },
+        flotr = Flotr,
+        point,
+        graph,
+        i;
+
+
+    for (i = 0; i < 8; i++) {
+        point = [i, Math.ceil(Math.random() * 10)];
+        bars.data.push(point);
+        markers.data.push(point);
+    }
+
+
+    var runner = function () {
+        if (!xmark.complete || !checkmark.complete) {
+            setTimeout(runner, 50);
+            return;
         }
-    }, {
-        data: q3.d4,
-        label: 'Drama'
-    }], {
-        HtmlText: false,
-        grid: {
-            verticalLines: false,
-            horizontalLines: false
-        },
-        xaxis: {
-            showLabels: false
-        },
-        yaxis: {
-            showLabels: false
-        },
-        pie: {
-            show: true,
-            explode: 6
-        },
-        mouse: {
-            track: true
-        },
-        legend: {
-            position: 'se',
-            backgroundColor: '#D2E8FF'
-        }
-    });
+
+        graph = flotr.draw(
+            container,
+            [bars, markers], {
+                yaxis: {
+                    min: 0,
+                    max: 11
+                },
+                xaxis: {
+                    min: -0.5,
+                    max: 7.5
+                },
+                grid: {
+                    verticalLines: false
+                }
+            }
+        );
+    }
+
+    xmark.onload = runner;
+    xmark.src = '/images/xmark.png';
+    checkmark.src = '/images/checkmark.png';
 });
