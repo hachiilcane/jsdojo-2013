@@ -2,53 +2,54 @@ $(function() {
 
 //    var graph1;
     var container = document.getElementById('editor-render-3');
+    var data = [];
 
-    var
-        horizontal = (horizontal ? true : false), // Show horizontal bars
-//        d1 = [],                                  // First data series
-//        d2 = [],                                  // Second data series
-        point,                                    // Data point variable declaration
-        i;
+    console.log(result.total_satisfaction);
 
-    for (i = 0; i < 4; i++) {
+    Object.keys(result.total_satisfaction).map(function(key){
+        var i = key - 1;
+        data[i] = [i, result.total_satisfaction[key]];
+    });
 
-//        if (horizontal) {
-//            point = [Math.ceil(Math.random()*10), i];
-//        } else {
-//            point = [i, Math.ceil(Math.random()*10)];
-//        }
-//
-//        d1.push(point);
-//        console.log(d1, '4-d1');
 
-//        if (horizontal) {
-//            point = [Math.ceil(Math.random()*10), i+0.5];
-//        } else {
-//            point = [i+0.5, Math.ceil(Math.random()*10)];
-//        }
-//
-//        d2.push(point);
-    };
-
-    // Draw the graph
-    Flotr.draw(
-        container,
-        [q4],
-        {
-            bars : {
-                show : true,
-                horizontal : horizontal,
-                shadowSize : 0,
-                barWidth : 0.5
-            },
-            mouse : {
-                track : true,
-                relative : true
-            },
-            yaxis : {
-                min : 0,
-                autoscaleMargin : 1
-            }
+    Flotr.draw(container, [{
+        data: [[0, result.total_satisfaction[1]]],
+        label: '1'
+    }, {
+        data: [[0, result.total_satisfaction[2]]],
+        label: '2'
+    }, {
+        data: [[0, result.total_satisfaction[3]]],
+        label: '3'
+    }, {
+        data: [[0, result.total_satisfaction[4]]],
+        label: '4'
+    }, {
+        data: [[1, result.total_satisfaction[5]]],
+        label: '5'
+    }], {
+        HtmlText: true,
+        grid: {
+            verticalLines: false,
+            horizontalLines: false
+        },
+        xaxis: {
+            showLabels: false
+        },
+        yaxis: {
+            showLabels: false
+        },
+        pie: {
+            show: true,
+            explode: 6
+        },
+        mouse: {
+            relative : true,
+            track: true
+        },
+        legend: {
+            position: 'se',
+            backgroundColor: '#D2E8FF'
         }
-    );
+    });
 });

@@ -7,12 +7,21 @@ $(function() {
 //    console.log(q1);
 //    console.log(q1.d1);
 
-    graph1 = Flotr.draw(container, [{
-        data: q1.d1,
-        label: '1回目'
+    Flotr.draw(container, [{
+        data: [[0, result.working_hours[1]]],
+        label: '1'
     }, {
-        data: q1.d2,
-        label: '2回目'
+        data: [[0, result.working_hours[2]]],
+        label: '2'
+    }, {
+        data: [[0, result.working_hours[3]]],
+        label: '3'
+    }, {
+        data: [[0, result.working_hours[4]]],
+        label: '4'
+    }, {
+        data: [[1, result.working_hours[5]]],
+        label: '5'
     }], {
         HtmlText: true,
         grid: {
