@@ -1,11 +1,13 @@
 jQuery(function ($) {
-  $('#submit').on('click', function() {
+  $('#questionnaire').on('submit', function(e) {
+    e.preventDefault();
+
     $.post("/send", $("#questionnaire").serialize())
       .done(function() {
-	alert("OK!");
+        alert("ご協力ありがとうございました！");
       })
       .fail(function() {
-	alert("アンケート結果送信に失敗しました。");
+        alert("アンケート結果送信に失敗しました。");
       });
   });
 });
