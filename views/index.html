@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>アンケート - JavaScript道場2013秋</title>
 <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/questionnaire.js"></script>
 </head>
 <body>
 <h1>アンケート - JavaScript道場2013秋</h1>
@@ -15,7 +16,7 @@
     <li>
       <div>何回目の参加ですか？</div>
       <div>
-	<input type="radio" name="times" value="1" id="">1回目</input>
+	<input type="radio" name="times" value="1" checked="checked" id="">1回目</input>
 	<input type="radio" name="times" value="2" id="">2回目</input>
       </div>
     </li>
@@ -23,7 +24,7 @@
     <li>
       <div>次回も参加したいですか？</div>
       <div>
-	<input type="radio" name="want_next" value="yes" id="">はい</input>
+	<input type="radio" name="want_next" value="yes" checked="checked" id="">はい</input>
 	<input type="radio" name="want_next" value="no" id="">いいえ</input>
       </div>
     </li>
@@ -31,7 +32,7 @@
     <li>
       <div>好きな言語は？</div>
       <ul>
-	<li><input type="radio" name="language" value="js" id="">js</input></li>
+	<li><input type="radio" name="language" value="js" checked="checked" id="">js</input></li>
 	<li><input type="radio" name="language" value="ruby" id="">Ruby</input></li>
 	<li><input type="radio" name="language" value="php" id="">PHP</input></li>
 	<li><input type="radio" name="language" value="java" id="">Java</input></li>
@@ -45,7 +46,7 @@
       <div>
 	<input type="radio" name="total_satisfaction" value="1" id="">不満足</input>
 	<input type="radio" name="total_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="total_satisfaction" value="3" id="">ふつう</input>
+	<input type="radio" name="total_satisfaction" value="3" checked="checked" id="">ふつう</input>
 	<input type="radio" name="total_satisfaction" value="4" id="">満足</input>
 	<input type="radio" name="total_satisfaction" value="5" id="">とても満足</input>
       </div>
@@ -56,7 +57,7 @@
       <div>
 	<input type="radio" name="venue_satisfaction" value="1" id="">不満足</input>
 	<input type="radio" name="venue_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="venue_satisfaction" value="3" id="">ふつう</input>
+	<input type="radio" name="venue_satisfaction" value="3" checked="checked" id="">ふつう</input>
 	<input type="radio" name="venue_satisfaction" value="4" id="">満足</input>
 	<input type="radio" name="venue_satisfaction" value="5" id="">とても満足</input>
       </div>
@@ -67,7 +68,7 @@
       <div>
 	<input type="radio" name="working_hours" value="1" id="">短い</input>
 	<input type="radio" name="working_hours" value="2" id="">やや短い</input>
-	<input type="radio" name="working_hours" value="3" id="">ちょうどよい</input>
+	<input type="radio" name="working_hours" value="3" checked="checked" id="">ちょうどよい</input>
 	<input type="radio" name="working_hours" value="4" id="">少し長い</input>
 	<input type="radio" name="working_hours" value="5" id="">長い</input>
       </div>
@@ -78,7 +79,7 @@
       <div>
 	<input type="radio" name="work_satisfaction" value="1" id="">不満足</input>
 	<input type="radio" name="work_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="work_satisfaction" value="3" id="">ふつう</input>
+	<input type="radio" name="work_satisfaction" value="3" checked="checked" id="">ふつう</input>
 	<input type="radio" name="work_satisfaction" value="4" id="">満足</input>
 	<input type="radio" name="work_satisfaction" value="5" id="">とても満足</input>
       </div>
@@ -86,7 +87,6 @@
   </ul>
   <div><button type="submit" id="submit">送信</button></div>
 </form>
-
 
 <p>
     <a href="result">アンケート結果を見る</a>
