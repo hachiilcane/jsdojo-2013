@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>アンケート - JavaScript道場2013秋</title>
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/questionnaire.js"></script>
 </head>
 <body>
 <h1>アンケート - JavaScript道場2013秋</h1>
@@ -43,13 +41,11 @@
 
     <li>
       <div>全体の満足度はいかがでしたか？</div>
-      <div>
-	<input type="radio" name="total_satisfaction" value="1" id="">不満足</input>
-	<input type="radio" name="total_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="total_satisfaction" value="3" checked="checked" id="">ふつう</input>
-	<input type="radio" name="total_satisfaction" value="4" id="">満足</input>
-	<input type="radio" name="total_satisfaction" value="5" id="">とても満足</input>
-      </div>
+      <p>
+	<label for="total_satisfaction">満足度:</label>
+	<input type="text" class="slider_text" name="total_satisfaction" id="total_satisfaction">
+	<div class="slider" id="slider_total_satisfaction"></div>
+      </p>
     </li>
 
     <li>
@@ -91,6 +87,11 @@
 <p>
     <a href="result">アンケート結果を見る</a>
 </p>
-
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/css/questionnaire.css">
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/questionnaire.js"></script>
+<!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </body>
 </html>
