@@ -2,96 +2,125 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/css/questionnaire.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <title>アンケート - JavaScript道場2013秋</title>
 </head>
 <body>
-<h1>アンケート - JavaScript道場2013秋</h1>
-
-<p>今後の参考のため、アンケートにご協力お願いします！</p>
-
-<form id="questionnaire">
-  <ul>
-    <li>
-      <div>何回目の参加ですか？</div>
-      <div>
-	<input type="radio" name="times" value="1" checked="checked" id="">1回目</input>
-	<input type="radio" name="times" value="2" id="">2回目</input>
-      </div>
-    </li>
-
-    <li>
-      <div>次回も参加したいですか？</div>
-      <div>
-	<input type="radio" name="want_next" value="yes" checked="checked" id="">はい</input>
-	<input type="radio" name="want_next" value="no" id="">いいえ</input>
-      </div>
-    </li>
-
-    <li>
-      <div>好きな言語は？</div>
-      <ul>
-	<li><input type="radio" name="language" value="js" checked="checked" id="">js</input></li>
-	<li><input type="radio" name="language" value="ruby" id="">Ruby</input></li>
-	<li><input type="radio" name="language" value="php" id="">PHP</input></li>
-	<li><input type="radio" name="language" value="java" id="">Java</input></li>
-	<li><input type="radio" name="language" value="python" id="">Python</input></li>
-	<li><input type="radio" name="language" value="other" id="">その他</input></li>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">jsdojo</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="result">アンケート結果を見る</a></li>
       </ul>
-    </li>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+    
+<div class="container">
 
-    <li>
-      <div>全体の満足度はいかがでしたか？</div>
-      <p>
-	<label for="total_satisfaction">満足度:</label>
-	<input type="text" class="slider_text" name="total_satisfaction" id="total_satisfaction">
-	<div class="slider" id="slider_total_satisfaction"></div>
-      </p>
-    </li>
+  <div class="page-header">
+    <h1>アンケート - JavaScript道場2013秋</h1>
+    <p class="lead">今後の参考のため、アンケートにご協力お願いします！</p>
+  </div>
 
-    <li>
-      <div>会場の満足度はいかがでしたか？</div>
-      <div>
-	<input type="radio" name="venue_satisfaction" value="1" id="">不満足</input>
-	<input type="radio" name="venue_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="venue_satisfaction" value="3" checked="checked" id="">ふつう</input>
-	<input type="radio" name="venue_satisfaction" value="4" id="">満足</input>
-	<input type="radio" name="venue_satisfaction" value="5" id="">とても満足</input>
-      </div>
-    </li>
+  <form id="questionnaire">
+    <ul>
+      <li>
+	<div>何回目の参加ですか？</div>
+	<div>
+	  <input type="radio" name="times" value="1" checked="checked" id="">1回目</input>
+	  <input type="radio" name="times" value="2" id="">2回目</input>
+	</div>
+      </li>
 
-    <li>
-      <div>時間は足りましたか？</div>
-      <div>
-	<input type="radio" name="working_hours" value="1" id="">短い</input>
-	<input type="radio" name="working_hours" value="2" id="">やや短い</input>
-	<input type="radio" name="working_hours" value="3" checked="checked" id="">ちょうどよい</input>
-	<input type="radio" name="working_hours" value="4" id="">少し長い</input>
-	<input type="radio" name="working_hours" value="5" id="">長い</input>
-      </div>
-    </li>
+      <li>
+	<div>次回も参加したいですか？</div>
+	<div>
+	  <input type="radio" name="want_next" value="yes" checked="checked" id="">はい</input>
+	  <input type="radio" name="want_next" value="no" id="">いいえ</input>
+	</div>
+      </li>
 
-    <li>
-      <div>作ったものの完成度はいかがでしたか？</div>
-      <div>
-	<input type="radio" name="work_satisfaction" value="1" id="">不満足</input>
-	<input type="radio" name="work_satisfaction" value="2" id="">やや不満足</input>
-	<input type="radio" name="work_satisfaction" value="3" checked="checked" id="">ふつう</input>
-	<input type="radio" name="work_satisfaction" value="4" id="">満足</input>
-	<input type="radio" name="work_satisfaction" value="5" id="">とても満足</input>
-      </div>
-    </li>
-  </ul>
-  <div><button type="submit" id="submit">送信</button></div>
-</form>
+      <li>
+	<div>好きな言語は？</div>
+	<ul>
+	  <li><input type="radio" name="language" value="js" checked="checked" id="">js</input></li>
+	  <li><input type="radio" name="language" value="ruby" id="">Ruby</input></li>
+	  <li><input type="radio" name="language" value="php" id="">PHP</input></li>
+	  <li><input type="radio" name="language" value="java" id="">Java</input></li>
+	  <li><input type="radio" name="language" value="python" id="">Python</input></li>
+	  <li><input type="radio" name="language" value="other" id="">その他</input></li>
+	</ul>
+      </li>
+
+      <li>
+	<div>全体の満足度はいかがでしたか？</div>
+	<p>
+	  <label for="total_satisfaction">満足度:</label>
+	  <input type="text" class="slider_text" name="total_satisfaction" id="total_satisfaction">
+	  <div class="slider" id="slider_total_satisfaction"></div>
+	</p>
+      </li>
+
+      <li>
+	<div>会場の満足度はいかがでしたか？</div>
+	<div>
+	  <input type="radio" name="venue_satisfaction" value="1" id="">不満足</input>
+	  <input type="radio" name="venue_satisfaction" value="2" id="">やや不満足</input>
+	  <input type="radio" name="venue_satisfaction" value="3" checked="checked" id="">ふつう</input>
+	  <input type="radio" name="venue_satisfaction" value="4" id="">満足</input>
+	  <input type="radio" name="venue_satisfaction" value="5" id="">とても満足</input>
+	</div>
+      </li>
+
+      <li>
+	<div>時間は足りましたか？</div>
+	<div>
+	  <input type="radio" name="working_hours" value="1" id="">短い</input>
+	  <input type="radio" name="working_hours" value="2" id="">やや短い</input>
+	  <input type="radio" name="working_hours" value="3" checked="checked" id="">ちょうどよい</input>
+	  <input type="radio" name="working_hours" value="4" id="">少し長い</input>
+	  <input type="radio" name="working_hours" value="5" id="">長い</input>
+	</div>
+      </li>
+
+      <li>
+	<div>作ったものの完成度はいかがでしたか？</div>
+	<div>
+	  <input type="radio" name="work_satisfaction" value="1" id="">不満足</input>
+	  <input type="radio" name="work_satisfaction" value="2" id="">やや不満足</input>
+	  <input type="radio" name="work_satisfaction" value="3" checked="checked" id="">ふつう</input>
+	  <input type="radio" name="work_satisfaction" value="4" id="">満足</input>
+	  <input type="radio" name="work_satisfaction" value="5" id="">とても満足</input>
+	</div>
+      </li>
+    </ul>
+    <div><button type="submit" id="submit">送信</button></div>
+  </form>
 
 <p>
-    <a href="result">アンケート結果を見る</a>
+
 </p>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="/css/questionnaire.css">
+
+</div><!-- /.container -->
+
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/questionnaire.js"></script>
 <!--  <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
